@@ -18,6 +18,7 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
     cmdBtnDesktopLabel: 'Desktop',
     cmdBtnTabletLabel: 'Tablet',
     cmdBtnMobileLabel: 'Mobile',
+    cmdBtnDeteLabel : 'Delete',
     modalTitleImport: 'Import template',
     modalTitleExport: 'Export template',
     modalLabelImport: '',
@@ -31,7 +32,8 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
     expTplBtnTitle: c.expTplBtnTitle || 'View Code',
     fullScrBtnTitle: c.fullScrBtnTitle || 'FullScreen',
     swichtVwBtnTitle: c.swichtVwBtnTitle || 'View Components',
-    categoryLabel: c.categoryLabel || '',
+    categoryLabel: c.categoryLabel || 'Section blocks',
+    blockCategoryLabel: c.blockCategoryLabel || 'Content blocks',
     importPlaceholder: '',
     defaultTemplate: '', // Default template in case the canvas is empty
     inlineCss: 1,
@@ -46,6 +48,10 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
       padding: '5px 5px 5px 5px',
       width: '100%'
     },
+    emailHeaderLabel : 'Email Header',
+    imageWithLinkLabel : 'Image with Link',
+    twoImageRowLabel : 'Two Image Row',
+    threeImageRowLabel : 'Three Image Row',
     sect100BlkLabel: '1 Section',
     sect50BlkLabel: '1/2 Section',
     sect30BlkLabel: '1/3 Section',
@@ -200,6 +206,11 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
       c[name] = defaults[name];
   }
 
+  // Add components
+  // let importComponents = require('./components');
+  // importComponents(c);
+
+
   // Add commands
   let importCommands = require('./commands');
   importCommands(c);
@@ -225,18 +236,18 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
   }
 
   // On component change show the Style Manager
-  editor.on('change:selectedComponent', function() {
-    var openLayersBtn = editor.Panels.getButton('views', 'open-layers');
+  // editor.on('change:selectedComponent', function() {
+  //   var openLayersBtn = editor.Panels.getButton('views', 'open-layers');
 
-    // Don't switch when the Layer Manager is on or
-    // there is no selected component
-    if((!openLayersBtn || !openLayersBtn.get('active')) &&
-      editor.editor.get('selectedComponent')){
-      var openSmBtn = editor.Panels.getButton('views', 'open-sm');
-      openSmBtn.set('attributes',{ title:defaults.openSmBtnTitle });
-      openSmBtn && openSmBtn.set('active', 1);
-    }
-  });
+  //   // Don't switch when the Layer Manager is on or
+  //   // there is no selected component
+  //   if((!openLayersBtn || !openLayersBtn.get('active')) &&
+  //     editor.editor.get('selectedComponent')){
+  //     var openSmBtn = editor.Panels.getButton('views', 'open-sm');
+  //     openSmBtn.set('attributes',{ title:defaults.openSmBtnTitle });
+  //     openSmBtn && openSmBtn.set('active', 1);
+  //   }
+  // });
 
   editor.on('run:open-assets', () => {
     const modal = editor.Modal;
@@ -258,10 +269,10 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
     swichtVwBtn.set('attributes', {
       title: defaults.swichtVwBtnTitle
     });
-    var openSmBtn = editor.Panels.getButton('views', 'open-sm');
-    openSmBtn.set('attributes', {
-      title: defaults.openSmBtnTitle
-    });
+    // var openSmBtn = editor.Panels.getButton('views', 'open-sm');
+    // openSmBtn.set('attributes', {
+    //   title: defaults.openSmBtnTitle
+    // });
     var openTmBtn = editor.Panels.getButton('views', 'open-tm');
     openTmBtn.set('attributes', {
       title: defaults.openTmBtnTitle
