@@ -1,5 +1,14 @@
 @import "gjs_variables.scss";
 
+
+.gjs-canvas{
+  width : $mp-width;
+}
+
+.gjs-pn-panel#gjs-pn-options{
+  right : $sb-width;
+}
+
 .#{$app-prefix}clm-tags .#{$app-prefix}sm-title,
 .#{$app-prefix}sm-sector .#{$app-prefix}sm-title {
   border-top: none;
@@ -102,8 +111,18 @@
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
+.gjs-pn-panel#gjs-pn-commands,
+.gjs-pn-panel#gjs-pn-options2 {
+  width : $mp-width;
+
+}
 #gjs-pn-views-container.#{$app-prefix}pn-panel {
+  width : $sb-width;
   padding: 39px 0 0;
+}
+
+#gjs-pn-views.gjs-pn-panel{
+  width:$sb-width;
 }
 
 #gjs-pn-views.#{$app-prefix}pn-panel {

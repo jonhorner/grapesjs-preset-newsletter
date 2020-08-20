@@ -1,5 +1,11 @@
 /* Class names prefixes */
 /* Colors / Theme */
+.gjs-canvas {
+  width: 70%; }
+
+.gjs-pn-panel#gjs-pn-options {
+  right: 30%; }
+
 .gjs-clm-tags .gjs-sm-title,
 .gjs-sm-sector .gjs-sm-title {
   border-top: none; }
@@ -88,8 +94,16 @@
 .gjs-block:hover {
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.15); }
 
+.gjs-pn-panel#gjs-pn-commands,
+.gjs-pn-panel#gjs-pn-options2 {
+  width: 70%; }
+
 #gjs-pn-views-container.gjs-pn-panel {
+  width: 30%;
   padding: 39px 0 0; }
+
+#gjs-pn-views.gjs-pn-panel {
+  width: 30%; }
 
 #gjs-pn-views.gjs-pn-panel {
   padding: 0;
