@@ -1,6 +1,6 @@
 import grapesjs from 'grapesjs';
 
-export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
+export default grapesjs.plugins.add('gjs-twinkl-newsletter', (editor, opts) => {
   let c = opts || {};
   let config = editor.getConfig();
   let pfx = config.stylePrefix;
@@ -8,6 +8,8 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
   let defaults = {
     editor,
     pfx: pfx || '',
+    textElId: 'text', // id of form element which hold the current newsletter content data
+    confirmClearMsg : 'Are you sure to remove all elements?',
     cmdOpenImport: 'gjs-open-import-template',
     cmdTglImages: 'gjs-toggle-images',
     cmdInlineHtml: 'gjs-get-inlined-html',
@@ -49,6 +51,7 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
       width: '100%'
     },
     emailHeaderLabel : 'Email Header',
+    ctaButtonLabel : 'CTA Button',
     imageWithLinkLabel : 'Image with Link',
     twoImageRowLabel : 'Two Image Row',
     threeImageRowLabel : 'Three Image Row',
@@ -257,6 +260,7 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
 
   // Do stuff on load
   editor.on('load', function() {
+    console.log('Plugin Loaded')
     var expTplBtn = editor.Panels.getButton('options', 'export-template');
     expTplBtn.set('attributes', {
       title: defaults.expTplBtnTitle

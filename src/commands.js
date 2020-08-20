@@ -42,5 +42,22 @@ define(function() {
         editor.setDevice('Mobile portrait');
       }
     });
+
+    cmdm.add('clear-canvas', {
+      run(editor, sender) {
+        sender && sender.set('active', false);
+        if(confirm(opt.confirmClearMsg)){
+          editor.DomComponents.clear();
+
+          // Clear the textarea#text input
+          var textInput = document.getElementById(opt.textElId);
+
+          if (textInput) {
+            // console.log('empty text content')
+            textInput.innerHTML = '';
+          }
+        }
+      }
+    })
   };
 })

@@ -67,7 +67,8 @@ define(function() {
         id: 'delete',
         className: 'fa fa-trash',
         command: 'canvas-clear',
-        attributes: {[tltAttr]: opt.cmdBtnDeteLabel}
+        attributes: {[tltAttr]: opt.cmdBtnDeteLabel},
+        command : 'clear-canvas'
       }]);
       updateTooltip(cmdBtns);
     }

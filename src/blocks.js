@@ -18,36 +18,92 @@ define(function() {
       label: opt.emailHeaderLabel,
       category: opt.blockCategoryLabel,
       attributes: {class:'gjs-fonts gjs-f-b1'},
-      content: `<table style="${tableStyleStr}">
-        <tr>
-          <td style="${cellStyleStr}">Header</td>
-        </tr>
-        </table>`,
+      content: `<table class="main-table" data-gjs-copyable="false" data-gjs-droppable="false" data-gjs-draggable="true" data-gjs-custom-name="Main Table"  align="center" width="600" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
+          <tbody class="target-tbody">
+            <tr data-gjs-droppable="false" data-gjs-draggable="false">
+              <td data-gjs-droppable="false" style="font-family: Roboto, sans-serif; font-weight: 300; font-size: 25px; background-color: #ffffff; color: #333333;" valign="bottom" align="center">
+                <b>TEXT GOES HERE</b><br><br>
+              </td>
+            </tr>
+            <tr data-gjs-droppable="false" data-gjs-draggable="false">
+                <td data-gjs-droppable="false" data-gjs-removable="false" height="1.5px" style="background-color: #333333"></td>
+            </tr>
+            <tr class="target" data-gjs-droppable=".ed-table-cell" data-gjs-removable="false">
+                <td class="target-cell" data-gjs-droppable="true"></td>
+            </tr>
+          </tbody></table>`,
+    });
+
+    bm.add('cta-button', {
+      label: opt.ctaButtonLabel,
+      category: opt.blockCategoryLabel,
+      attributes: {class:'gjs-fonts gjs-f-button'},
+      content: `<table align="center">
+          <tbody>
+            <tr class="ed-cta-button" data-gjs-custom-name="CTA Button Row" >
+                <td>
+                    <a data-gjs-droppable="false" data-gjs-draggable="false" href="" title="" target="_blank" style="font-size: 1.5em; font-weight:bold; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; background-color: #5d8200; border-top: 16px solid #5d8200; border-bottom: 16px solid #5d8200; border-right: 22px solid #5d8200; border-left: 22px solid #5d8200; display: inline-block; ">
+                        TEXT GOES HERE
+                    </a>
+                </td data-gjs-droppable="false" data-gjs-draggable="false">
+            </tr>
+          </tbody>
+        </table>`
+    });
+
+    bm.add('image-with-link', {
+      label: opt.imageWithLinkLabel,
+      category: opt.blockCategoryLabel,
+      attributes: {class:'gjs-fonts gjs-f-image'},
+      content: `<tr class="ed-img-with-link" data-gjs-droppable="false" data-gjs-draggable=".target-table" data-gjs-name="Row with Image Link" align="center">
+                    <td>
+                        <a href="">
+                            <img src="" alt="review_header" width="600" height="300">
+                        </a>
+                    </td>
+                </tr>`,
     });
 
     bm.add('two-col-image-row', {
       label: opt.twoImageRowLabel,
       category: opt.blockCategoryLabel,
       attributes: {class:'gjs-fonts gjs-f-b2'},
-      content: `<table style="${tableStyleStr}">
-        <tr>
-          <td style="${cellStyleStr} width: 50%"></td>
-          <td style="${cellStyleStr} width: 50%"></td>
-        </tr>
+      content: `
+        <table border="0" halign="centre" cellpadding="0" cellspacing="0" width="100%" style="${tableStyleStr} text-align:center;font-family: 'Roboto',sans-serif; line-height:20px; font-weight:300;">
+          <tbody>
+            <tr>
+              <td vertical-align="middle" style="color:#005b94" width="290">
+               <a href="" title=""><img src="" alt="" width="250px" height="250px" align="center"></a>
+              </td>
+              <td vertical-align="middle" style="color:#005b94" width="290">
+               <a href=""><img src="" alt="" width="250px" height="250px" align="center"></a>
+              </td>
+            </tr>
+          </tbody>
         </table>`,
     });
+
+
 
     bm.add('three-col-image-row', {
       label: opt.threeImageRowLabel,
       category: opt.blockCategoryLabel,
       attributes: {class:'gjs-fonts gjs-f-b3'},
-      content: `<table style="${tableStyleStr}">
-        <tr>
-          <td style="${cellStyleStr} width: 33.3333%"></td>
-          <td style="${cellStyleStr} width: 33.3333%"></td>
-          <td style="${cellStyleStr} width: 33.3333%"></td>
-        </tr>
-        </table>`,
+      content: `<table style="text-align:center" border="0" halign="centre" cellpadding="0" cellspacing="0" width="100%" style="font-family: \'Roboto\',sans-serif; line-height:20px; font-weight:300;">
+                 <tbody>
+                   <tr>
+                     <td vertical-align="middle" style="color:#005b94" width="190">
+                      <a href=""><img src="" alt="" width="160px" height="160px" align="center"></a>
+                     </td>
+                     <td vertical-align="middle" style="color:#005b94" width="190">
+                      <a href=""><img src="" alt="" width="160px" height="160px" align="center"></a>
+                     </td>
+                     <td vertical-align="middle" style="color:#005b94" width="190">
+                      <a href=""><img src="" alt="" width="160px" height="160px" align="center"></a>
+                     </td>
+                   </tr>
+                 </tbody>
+               </table>`,
     });
 
     bm.add('sect100', {

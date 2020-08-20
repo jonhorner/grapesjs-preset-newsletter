@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-twinkl-newsletter",
-  "version": "0.2.27",
+  "version": "0.2.35",
   "description": "GrapesJS preset configuration for the newsletter editor",
   "main": "dist/grapesjs-twinkl-newsletter.min.js",
   "scripts": {

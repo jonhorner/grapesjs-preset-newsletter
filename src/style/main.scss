@@ -1,11 +1,11 @@
 @import "gjs_variables.scss";
 
 
-.gjs-canvas{
+.#{$app-canvas-prefix}canvas {
   width : $mp-width;
 }
 
-.gjs-pn-panel#gjs-pn-options{
+.#{$app-prefix}pn-panel#gjs-pn-options {
   right : $sb-width;
 }
 
