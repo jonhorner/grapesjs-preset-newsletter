@@ -51,6 +51,28 @@ define(function() {
         </table>`
     });
 
+
+    bm.add('paragraph', {
+        category : 'Custom blocks',
+        label: 'Paragraph',
+        attributes: {class:'gjs-fonts gjs-f-text'},
+        content: {
+            type: 'text',
+            content: '<p>Insert your text here<p>',
+            style: { margin : '10px' },
+            activeOnRender: 1
+        },
+        // content: '<p style="margin-bottom:12px">Add your text</p>'
+    });
+
+    bm.add('paragraph-cell', {
+      category : 'Custom blocks',
+      label: 'Paragraph cell',
+      attributes: {class:'gjs-fonts gjs-f-text'},
+      content: '<td><p style="font-family: Roboto, sans-serif; font-weight: 300; font-size:18px; background-color: #ffffff; color: #333333;">'+
+          'Add your text</p></td>'
+    });
+
     bm.add('image-with-link', {
       label: opt.imageWithLinkLabel,
       category: opt.blockCategoryLabel,
