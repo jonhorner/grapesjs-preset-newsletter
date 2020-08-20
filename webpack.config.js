@@ -1,7 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var pkg = require('./package.json');
-var name = 'grapesjs-preset-newsletter';
+var name = 'grapesjs-twinkl-newsletter';
 var env = process.env.WEBPACK_ENV;
 var plugins = [];
 

@@ -1,12 +1,12 @@
 {
-  "name": "grapesjs-preset-newsletter",
-  "version": "0.2.20",
+  "name": "grapesjs-twinkl-newsletter",
+  "version": "0.2.27",
   "description": "GrapesJS preset configuration for the newsletter editor",
-  "main": "dist/grapesjs-preset-newsletter.min.js",
+  "main": "dist/grapesjs-twinkl-newsletter.min.js",
   "scripts": {
     "lint": "eslint src",
     "build": "cross-env WEBPACK_ENV=prod && npm run v:patch && webpack && npm run build:css",
-    "build:css": "node-sass src/style/main.scss dist/grapesjs-preset-newsletter.css",
+    "build:css": "node-sass src/style/main.scss dist/grapesjs-twinkl-newsletter.css",
     "v:patch": "npm version --no-git-tag-version patch",
     "start": "cross-env WEBPACK_ENV=dev ./node_modules/.bin/webpack-dev-server --progress --colors & npm run build:css -- -w",
     "test": "jest"
